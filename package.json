@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@provenanceio/wallet-lib": "^2.5.0",
-    "@provenanceio/walletconnect-js": "^1.2.11",
+    "@provenanceio/wallet-lib": "^2.4.3",
+    "@provenanceio/walletconnect-js": "^2.1.8",
+    "bufferutil": "^4.0.7",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.0.8",
-    "use-debounce": "^9.0.4"
+    "use-debounce": "^9.0.4",
+    "utf-8-validate": "^5.0.10"
   },
   "devDependencies": {
     "@types/node": "^20",

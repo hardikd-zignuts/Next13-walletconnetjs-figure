@@ -19,7 +19,7 @@ export const Disconnect = ({ walletConnectService, setPopup }) => {
     });
 
     return () => {
-      walletConnectService.removeAllListeners(WINDOW_MESSAGES.DISCONNECT);
+      walletConnectService.removeEventListener(WINDOW_MESSAGES.DISCONNECT);
     }
   }, [walletConnectService, setPopup]);
 
@@ -35,7 +35,7 @@ Disconnect.propTypes = {
   walletConnectService: PropTypes.shape({
     disconnect: PropTypes.func,
     addListener: PropTypes.func,
-    removeAllListeners: PropTypes.func,
+    removeEventListener: PropTypes.func,
   }).isRequired,
   setPopup: PropTypes.func.isRequired,
 };

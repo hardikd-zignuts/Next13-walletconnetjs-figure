@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { WINDOW_MESSAGES, useWalletConnect } from '@provenanceio/walletconnect-js';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { Button } from '../../Components';
 import { ActionContainer } from './ActionContainer';
 
@@ -20,11 +19,10 @@ export const Connect = ({ walletConnectService, setPopup }) => {
     });
 
     return () => {
-      walletConnectService.removeAllListeners(WINDOW_MESSAGES.CONNECTED);
+      walletConnectService.removeEventListener(WINDOW_MESSAGES.CONNECTED);
     }
   }, [walletConnectService, setPopup]);
 
- 
 
   return (
     <ActionContainer color={color} noMargin>
@@ -34,11 +32,11 @@ export const Connect = ({ walletConnectService, setPopup }) => {
   );
 };
 
-Connect.propTypes = {
-  walletConnectService: PropTypes.shape({
-    connect: PropTypes.func,
-    addListener: PropTypes.func,
-    removeAllListeners: PropTypes.func,
-  }).isRequired,
-  setPopup: PropTypes.func.isRequired,
-};
+// Connect.propTypes = {
+//   walletConnectService: PropTypes.shape({
+//     connect: PropTypes.func,
+//     addListener: PropTypes.func,
+//     removeEventListener: PropTypes.func,
+//   }).isRequired,
+//   setPopup: PropTypes.func.isRequired,
+// };

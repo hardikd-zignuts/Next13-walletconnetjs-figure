@@ -53,8 +53,8 @@ export const Action = ({
     });
 
     return () => {
-      walletConnectService.removeAllListeners(windowMsgComplete);
-      walletConnectService.removeAllListeners(windowMsgFailed);
+      walletConnectService.removeEventListener(windowMsgComplete);
+      walletConnectService.removeEventListener(windowMsgFailed);
     };
   }, [
     walletConnectService,
